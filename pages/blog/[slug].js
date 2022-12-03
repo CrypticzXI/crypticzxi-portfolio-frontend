@@ -190,7 +190,8 @@ export const getServerSideProps = async (pageContext) => {
   }`
   const Navbar = await sanityClient.fetch(nav_query)
 
-  const datetime = moment(blog.date).format(("dddd, MMMM Do YYYY, h:mm")); 
+  const datetime = moment(blog.date).format(("dddd, MMMM Do YYYY, h:mma")); 
+
 
   var raw_blog = blog;
   var blog_title = blog?.title;
