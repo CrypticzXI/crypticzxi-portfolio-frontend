@@ -25,6 +25,10 @@ const blogpost = ({
       <Head>
         <title>{DomainName} - {title}</title>
         <link rel="shortcut icon" href={urlFor(Navbar.headerlogo)} />
+
+        <meta content="CrypticzXI - Portfolio" property="og:title" />
+        <meta id="embed-desc" property="og:description" content={post}></meta>
+        <meta name="theme-color" content="#198794"></meta>
       </Head>
 
       <div className="fixed top-0 w-full h-16 bg-clip-padding backdrop-blur-xl bg-opacity-50 bg-Background z-[500] flex items-center xl:px-40 lg:px-32 md:px-20 px-8 transition-all">
