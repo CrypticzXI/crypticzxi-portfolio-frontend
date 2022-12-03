@@ -22,7 +22,7 @@ const home = ({
             <meta content="CrypticzXI - Portfolio" property="og:title" />
             <meta id="embed-desc" property="og:description" content="Never live life without a hope. Hope is a tree of life."></meta>
             <meta name="theme-color" content="#198794"></meta>
-            <meta name="thumbnail" content="https://cdn.sanity.io/images/4i4gqgxn/production/27eda8e5bb24a2d31be80a8062077af933ddbb99-1534x1193.png"></meta>
+            <meta name="thumbnail" property="og:thumbnail" content="https://cdn.sanity.io/images/4i4gqgxn/production/27eda8e5bb24a2d31be80a8062077af933ddbb99-1534x1193.png"></meta>
           </Head>
 
           <div className="fixed top-0 w-full h-16 bg-clip-padding backdrop-blur-xl bg-opacity-50 bg-Background z-[500] flex items-center xl:px-40 lg:px-32 md:px-20 px-8 transition-all">
