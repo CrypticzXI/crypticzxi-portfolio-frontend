@@ -19,6 +19,7 @@ const blogpost = ({
     Navbar
 }) => {
   var Filesize = formatSizeUnits(fileinfo?.size)
+  var Image0 = urlFor(images[0])
   return (
     <div className="bg-Background min-h-screen overflow-x-hidden">
 
@@ -29,10 +30,10 @@ const blogpost = ({
         <meta content={"CrypticzXI - Blog Post"} property="og:title" />
         <meta id="embed-desc" property="og:description" content={title + " - " + currentdate}></meta>
         <meta name="theme-color" content="#198794"></meta>
-        <meta property="og:image" content="https://cdn.sanity.io/images/4i4gqgxn/production/27eda8e5bb24a2d31be80a8062077af933ddbb99-1534x1193.png"></meta>
+        <meta property="og:image" content={Image0}></meta>
         <meta name="twitter:card" content="summary_large_image"></meta>
-        <meta id="image-src" name="twitter:image:src" content="https://cdn.sanity.io/images/4i4gqgxn/production/27eda8e5bb24a2d31be80a8062077af933ddbb99-1534x1193.png"></meta>
-        <meta id="discord" name="twitter:image" content="https://cdn.sanity.io/images/4i4gqgxn/production/27eda8e5bb24a2d31be80a8062077af933ddbb99-1534x1193.png"></meta>
+        <meta id="image-src" name="twitter:image:src" content={Image0}></meta>
+        <meta id="discord" name="twitter:image" content={Image0}></meta>
       </Head>
 
       <div className="fixed top-0 w-full h-16 bg-clip-padding backdrop-blur-xl bg-opacity-50 bg-Background z-[500] flex items-center xl:px-40 lg:px-32 md:px-20 px-8 transition-all">
