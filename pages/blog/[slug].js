@@ -30,6 +30,9 @@ const blogpost = ({
         <meta id="embed-desc" property="og:description" content={title + " - " + currentdate}></meta>
         <meta name="theme-color" content="#198794"></meta>
         <meta property="og:image" content={urlFor(images[0])}></meta>
+        <meta name="twitter:card" content="summary_large_image"></meta>
+        <meta id="image-src" name="twitter:image:src" content={urlFor(images[0])}></meta>
+        <meta id="discord" name="twitter:image" content={urlFor(images[0])}></meta>
       </Head>
 
       <div className="fixed top-0 w-full h-16 bg-clip-padding backdrop-blur-xl bg-opacity-50 bg-Background z-[500] flex items-center xl:px-40 lg:px-32 md:px-20 px-8 transition-all">
