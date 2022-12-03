@@ -1,12 +1,12 @@
-import { sanityClient, urlFor } from "../../sanity"
-import { formatSizeUnits } from "../../utils"
-import JarallaxImage from '../../components/JarallaxImage';
+import { sanityClient, urlFor } from "../sanity"
+import { formatSizeUnits } from "../utils"
+import JarallaxImage from '../components/JarallaxImage';
 import Dynamic from 'next/dynamic';
 import BlockContent from '@sanity/block-content-to-react'
 import moment from 'moment'
 import Head from 'next/head'
 
-const Jarallax = Dynamic(() => import('../../components/Jarallax'), { ssr: false });
+const Jarallax = Dynamic(() => import('../components/Jarallax'), { ssr: false });
 
 
 const profile = ({ 
@@ -28,49 +28,46 @@ const profile = ({
         <link rel="shortcut icon" href={urlFor(Navbar.headerlogo)} />
       </Head>
 
-        <div className="absolute top-0 left-0 w-full h-16 bg-clip-padding backdrop-blur-xl bg-opacity-50 bg-Background z-[420] flex items-center xl:px-40 lg:px-32 md:px-20 px-8 transition-all">
-            
-
-            {Navbar?.headerlogo?
-              <a className="" href="/"><img className="max-h-10 hover:scale-[0.9] transition-all" alt={Navbar.headerlogoalt} src={urlFor(Navbar.headerlogo)} /></a>
-            :
-            <a href="/" className="text-Text font-poppins font-[600] text-lg">{Navbar.headerlogoalt}</a>}
-          
-            <div className="flex-grow"></div>
-
-            <div className="space-x-5 md:flex hidden">
-                {Navbar.directorys.map(( data ) => (
-                  data.title?
-                <a href={data.href} className="text-Text transition-all hover:text-FirstColour font-rubik font-[300] text-lg">{data.title}</a>:null
-                ))}
-            </div>
-
-            <button onClick={() => {document.getElementById("mobile_menu").style.display = "flex";}} className="flex md:hidden">
+      <div className="fixed top-0 w-full h-16 bg-clip-padding backdrop-blur-xl bg-opacity-50 bg-Background z-[500] flex items-center xl:px-40 lg:px-32 md:px-20 px-8 transition-all">
               
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-Text transition-all hover:text-FirstColour" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-            
-
+              <a href="../"><img className="max-h-10 hover:scale-[0.9] transition-all" src="https://cdn.sanity.io/images/4i4gqgxn/production/27eda8e5bb24a2d31be80a8062077af933ddbb99-1534x1193.png" /></a>
               
-        </div>
+              <div className="flex-grow"></div>
 
-        <div id="mobile_menu" className="bg-SecondryBackground fixed top-0 left-0 w-full h-screen hidden z-[999]">
-              <div className="flex w-full h-full relative">
-                  <button onClick={() => {document.getElementById("mobile_menu").style.display = "none";}} className="absolute top-5 right-5 ">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-Text transition-all hover:text-FirstColour" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-
-                  <div className="flex flex-col items-center justify-center w-full h-full">
-                    {Navbar.directorys.map(( data ) => (
-                      data.title?<a href={data.href} className="text-Text transition-all p-4 w-full text-center hover:text-FirstColour font-rubik font-[300] text-xl">{data.title}</a>:null
-                    ))}
-                  </div>
+              <div className="space-x-5 md:flex hidden">
+                <a href="../" className="text-Text transition-all hover:text-FirstColour font-rubik font-[300] text-lg">Home</a>
+                <a href="../aboutme#portfolio/" className="text-Text transition-all hover:text-FirstColour font-rubik font-[300] text-lg">Portfolio</a>
+                <a href="../aboutme/" className="text-Text transition-all hover:text-FirstColour font-rubik font-[300] text-lg">About Me</a>
+                <a href="../aboutme#contactme/" className="text-Text transition-all hover:text-FirstColour font-rubik font-[300] text-lg">Contact Me</a>
               </div>
-            </div>
+
+              <button onClick={() => {document.getElementById("mobile_menu").style.display = "flex";}} className="flex md:hidden">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-Text transition-all hover:text-FirstColour" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+
+          </div>
+
+          <div id="mobile_menu" className="bg-SecondryBackground w-full h-screen hidden top-0 left-0 fixed z-[999]">
+                <div className="flex w-full h-full relative">
+                    <button onClick={() => {document.getElementById("mobile_menu").style.display = "none";}} className="absolute top-5 right-5 ">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-Text transition-all hover:text-FirstColour" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+
+                    <div className="flex flex-col items-center justify-center w-full h-full">
+                      <a href="../" className="text-Text transition-all p-4 w-full text-center hover:text-FirstColour font-rubik font-[300] text-xl">Home</a>
+                      <a href="../portfolio/" className="text-Text transition-all p-4 w-full text-center hover:text-FirstColour font-rubik font-[300] text-xl">Portfolio</a>
+                      <a href="../aboutme/" className="text-Text transition-all p-4 w-full text-center hover:text-FirstColour font-rubik font-[300] text-xl">About Me</a>
+                      <a href="../aboutme#contactme/" className="text-Text transition-all p-4 w-full text-center hover:text-FirstColour font-rubik font-[300] text-xl">Contact Me</a>
+                    </div>
+
+  
+                </div>
+              </div>
 
       <div className="h-16 w-full flex bg-SecondryBackground"></div>
 

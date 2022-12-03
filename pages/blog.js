@@ -22,20 +22,17 @@ const blog = ({
 
  
 
-          <div className="absolute top-0 left-0 w-full h-16 bg-clip-padding backdrop-blur-xl bg-opacity-50 bg-Background z-[420] flex items-center xl:px-40 lg:px-32 md:px-20 px-8 transition-all">
+          <div className="fixed top-0 w-full h-16 bg-clip-padding backdrop-blur-xl bg-opacity-50 bg-Background z-[500] flex items-center xl:px-40 lg:px-32 md:px-20 px-8 transition-all">
               
-              {Navbar?.headerlogo?
-                <a href="/"><img className="max-h-10 hover:scale-[0.9] transition-all" alt={Navbar.headerlogoalt} src={urlFor(Navbar.headerlogo)} /></a>
-              :
-              <a href="/" className="text-Text font-poppins font-[600] text-lg">{Navbar.headerlogoalt}</a>}
-            
+              <a href="../"><img className="max-h-10 hover:scale-[0.9] transition-all" src="https://cdn.sanity.io/images/4i4gqgxn/production/27eda8e5bb24a2d31be80a8062077af933ddbb99-1534x1193.png" /></a>
+              
               <div className="flex-grow"></div>
 
               <div className="space-x-5 md:flex hidden">
-                  {Navbar.directorys.map(( data ) => (
-                    data.title?
-                    <a href={data.href} className="text-Text transition-all hover:text-FirstColour font-rubik font-[300] text-lg">{data.title}</a>:null
-                  ))}
+                <a href="../" className="text-Text transition-all hover:text-FirstColour font-rubik font-[300] text-lg">Home</a>
+                <a href="../aboutme#portfolio/" className="text-Text transition-all hover:text-FirstColour font-rubik font-[300] text-lg">Portfolio</a>
+                <a href="../aboutme/" className="text-Text transition-all hover:text-FirstColour font-rubik font-[300] text-lg">About Me</a>
+                <a href="../aboutme#contactme/" className="text-Text transition-all hover:text-FirstColour font-rubik font-[300] text-lg">Contact Me</a>
               </div>
 
               <button onClick={() => {document.getElementById("mobile_menu").style.display = "flex";}} className="flex md:hidden">
@@ -48,40 +45,39 @@ const blog = ({
           </div>
 
           <div id="mobile_menu" className="bg-SecondryBackground w-full h-screen hidden top-0 left-0 fixed z-[999]">
-            <div className="flex w-full h-full relative">
-                <button onClick={() => {document.getElementById("mobile_menu").style.display = "none";}} className="absolute top-5 right-5 ">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-Text transition-all hover:text-FirstColour" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
+                <div className="flex w-full h-full relative">
+                    <button onClick={() => {document.getElementById("mobile_menu").style.display = "none";}} className="absolute top-5 right-5 ">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-Text transition-all hover:text-FirstColour" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
 
-                <div className="flex flex-col items-center justify-center w-full h-full">
-                  {Navbar.directorys.map(( data ) => (
-                    data.title?
-                    <a href={data.href} className="text-Text transition-all p-4 w-full text-center hover:text-FirstColour font-rubik font-[300] text-xl">{data.title}</a>:null
-                  ))}
-                </div>
-            </div>
-          </div>
-
-
-          
-
-          <div className="w-screen h-screen bg-Background pt-40 p-4 flex items-center flex-col space-y-5">
-          
-            {blogs?.map((skill) => (
-              skill?
-                <a href={`/blog/${skill.slug.current}`} className="w-full md:max-w-4xl max-w-md h-44 bg-SecondryBackground rounded-xl flex items-center md:p-8 p-4 hover:scale-[0.98] transition-all">
-                  <img src={urlFor(skill.image)} className="md:w-[100px] md:h-[100px] h-[75px] w-[75px] rounded-full"></img>
-                  <div className="text-Text ml-5">
-                    {skill.title?<h2 className="font-[500] text-xl font-poppins">{skill.title}</h2>:null}
-                    <div className="font-[300] md:text-base text-xs mt-2 text-Text font-rubik flex md:flex-row flex-col md:space-y-0 space-y-2">
-                      {DateTime?<p className="mr-2">Posted: {DateTime}</p>:null}
-                      {skill.portfolio.title?<p className="md:flex hidden mr-2">/</p>:null}
-                      {skill.portfolio.title?<p className="">Portfolio Refrence: {skill.portfolio.title}</p>:null}
+                    <div className="flex flex-col items-center justify-center w-full h-full">
+                      <a href="../" className="text-Text transition-all p-4 w-full text-center hover:text-FirstColour font-rubik font-[300] text-xl">Home</a>
+                      <a href="../portfolio/" className="text-Text transition-all p-4 w-full text-center hover:text-FirstColour font-rubik font-[300] text-xl">Portfolio</a>
+                      <a href="../aboutme/" className="text-Text transition-all p-4 w-full text-center hover:text-FirstColour font-rubik font-[300] text-xl">About Me</a>
+                      <a href="../contactme/" className="text-Text transition-all p-4 w-full text-center hover:text-FirstColour font-rubik font-[300] text-xl">Contact Me</a>
                     </div>
-                  </div>
-                </a>
+                </div>
+              </div>
+
+
+          
+
+          <div className="h-screen bg-Background pt-40 p-4 flex items-center flex-col space-y-5">
+
+            {blogs?.map((map) => (
+              blog?
+              <a href={`/blog/${map.slug.current}`} className="w-full max-w-5xl bg-SecondryBackground rounded-xl flex items-center flex-col md:flex-row hover:scale-[0.98] transition-all">
+              <div className="ImageContainer overflow-hidden md:rounded-l-xl md:rounded-t-none rounded-t-xl bg-center bg-cover md:w-[200px] md:h-[200px] w-full h-[500px]" style={{backgroundImage: "url(" + urlFor(map.image) + ")",}}></div>
+              <div className="text-Text md:ml-8 TextContainer p-4 md:py-0 py-8">
+                <h2 className="font-[500] text-xl font-poppins">{map.title}</h2>
+                <div className="font-[300] md:text-base text-xs mt-2 text-Text font-rubik flex md:flex-row flex-col md:space-y-0 space-y-2">
+                  <p className="mr-2">{moment(map.date).format(("dddd, MMMM Do YYYY, h:mma"))}</p>
+                </div>
+              </div>
+              </a>
+
             :null))}
 
             {!blogs?

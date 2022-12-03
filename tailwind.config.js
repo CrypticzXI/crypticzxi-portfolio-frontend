@@ -9,11 +9,11 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      'Background': '#101010',
-      'SecondryBackground': '#151515',
+      'Background': '#131c29',
+      'SecondryBackground': '#1b2737',
       'Text': "#ffffff",
-      'FirstColour': "#0ea5e9",
-      'SecondryColour': "#10b981",
+      'FirstColour': "#198794",
+      'SecondryColour': "#38acad",
       'required': "#ef4444"
     },
     extend: {

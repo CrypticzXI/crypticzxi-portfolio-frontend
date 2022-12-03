@@ -22,7 +22,7 @@ Account
             <div className="absolute top-0 left-0 w-full h-16 bg-clip-padding backdrop-blur-xl bg-opacity-50 bg-Background z-[420] flex items-center xl:px-40 lg:px-32 md:px-20 px-8 transition-all">
               
               {Navbar?.headerlogo?
-                <a href="/"><img className="max-h-10 hover:scale-[0.9] transition-all" alt={Navbar.headerlogoalt} src={urlFor(Navbar.headerlogo)} /></a>
+                <a href="/"><img className="max-h-10 hover:scale-[0.9] transition-ally" alt={Navbar.headerlogoalt} src={urlFor(Navbar.headerlogo)} /></a>
               :
               <a href="/" className="text-Text font-poppins font-[600] text-lg">{Navbar.headerlogoalt}</a>}
             

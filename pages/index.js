@@ -9,35 +9,31 @@ const Jarallax = Dynamic(() => import('../components/Jarallax'), { ssr: false })
 
 const home = ({
   portfolios, 
-  home_page, 
-  Navbar,
   Blog,
-  DateTime,
   DomainName
 }) => {
   return (
-        <div className="main">
+        <div className="main bg-Background">
 
           <Head>
             <title>{DomainName} - Home</title>
-            <link rel="shortcut icon" href={urlFor(Navbar.headerlogo)} />
+            <link rel="shortcut icon" href="https://cdn.sanity.io/images/4i4gqgxn/production/27eda8e5bb24a2d31be80a8062077af933ddbb99-1534x1193.png" />
+
+            <meta content="CrypticzXI - Portfolio" property="og:title" />
+            <meta id="embed-desc" property="og:description" content={portfolios[0].owninguser.aboutme.desc}></meta>
           </Head>
 
- 
-
-          <div className="absolute top-0 left-0 w-full h-16 bg-clip-padding backdrop-blur-xl bg-opacity-50 bg-Background z-[420] flex items-center xl:px-40 lg:px-32 md:px-20 px-8 transition-all">
+          <div className="fixed top-0 w-full h-16 bg-clip-padding backdrop-blur-xl bg-opacity-50 bg-Background z-[500] flex items-center xl:px-40 lg:px-32 md:px-20 px-8 transition-all">
               
-              {Navbar?.headerlogo?
-                <a href="/"><img className="max-h-10 hover:scale-[0.9] transition-all" alt={Navbar.headerlogoalt} src={urlFor(Navbar.headerlogo)} /></a>
-              :
-              <a href="/" className="text-Text font-poppins font-[600] text-lg">{Navbar.headerlogoalt}</a>}
-            
+              <a href="../"><img className="max-h-10 hover:scale-[0.9] transition-all" src="https://cdn.sanity.io/images/4i4gqgxn/production/27eda8e5bb24a2d31be80a8062077af933ddbb99-1534x1193.png" /></a>
+              
               <div className="flex-grow"></div>
 
               <div className="space-x-5 md:flex hidden">
-                  {Navbar.directorys.map(( data ) => (
-                  data.title?<a href={data.href} className="text-Text transition-all hover:text-FirstColour font-rubik font-[300] text-lg">{data.title}</a>:null
-                  ))}
+                <a href="../" className="text-Text transition-all hover:text-FirstColour font-rubik font-[300] text-lg">Home</a>
+                <a href="../aboutme#portfolio/" className="text-Text transition-all hover:text-FirstColour font-rubik font-[300] text-lg">Portfolio</a>
+                <a href="../aboutme/" className="text-Text transition-all hover:text-FirstColour font-rubik font-[300] text-lg">About Me</a>
+                <a href="../aboutme#contactme/" className="text-Text transition-all hover:text-FirstColour font-rubik font-[300] text-lg">Contact Me</a>
               </div>
 
               <button onClick={() => {document.getElementById("mobile_menu").style.display = "flex";}} className="flex md:hidden">
@@ -58,33 +54,34 @@ const home = ({
                     </button>
 
                     <div className="flex flex-col items-center justify-center w-full h-full">
-                      {Navbar.directorys.map(( data ) => (
-                        data.title?<a href={data.href} className="text-Text transition-all p-4 w-full text-center hover:text-FirstColour font-rubik font-[300] text-xl">{data.title}</a>:null
-                      ))}
+                      <a href="../" className="text-Text transition-all p-4 w-full text-center hover:text-FirstColour font-rubik font-[300] text-xl">Home</a>
+                      <a href="../portfolio/" className="text-Text transition-all p-4 w-full text-center hover:text-FirstColour font-rubik font-[300] text-xl">Portfolio</a>
+                      <a href="../aboutme/" className="text-Text transition-all p-4 w-full text-center hover:text-FirstColour font-rubik font-[300] text-xl">About Me</a>
+                      <a href="../contactme/" className="text-Text transition-all p-4 w-full text-center hover:text-FirstColour font-rubik font-[300] text-xl">Contact Me</a>
                     </div>
+
+  
                 </div>
               </div>
 
           <Jarallax className="w-full h-screen bg-cover bg-center jarallax" speed={0.2}>
     
-            <JarallaxImage className="h-screen" src={urlFor(home_page[0].backgroundImage)} alt="" />
+            <JarallaxImage className="h-screen" src="https://cdn.sanity.io/images/4i4gqgxn/production/32aa7fe72a87573b5b8f195e3b822763d11070b4-1600x900.jpg" alt="" />
             
-            <div className="w-full h-full bg-opacity-60 bg-Background space-y-4 flex flex-col items-center justify-center">
+            <div className="w-full h-full bg-opacity-60 bg-[#101010] space-y-4 flex flex-col items-center justify-center">
 
-              {home_page[0].titleline1?<h2 className="text-Text text-center font-poppins font-[800] text-2xl md:text-4xl lg:text-5xl uppercase tracking-wide leading-[1]">{home_page[0].titleline1}</h2>:<div></div>}
-              {home_page[0].titleline2?<h2 className="text-Text text-center font-poppins font-[800] text-2xl md:text-4xl lg:text-5xl uppercase tracking-wide leading-[1]">{home_page[0].titleline2}</h2>:<div></div>}
+              <h2 className="text-Text text-center font-poppins font-[800] text-lg transition-all md:text-3xl lg:text-4xl uppercase tracking-wide leading-[1]">Never live life without a hope.</h2>
+              <h2 className="text-Text text-center font-poppins font-[800] text-lg transition-all md:text-3xl lg:text-4xl uppercase tracking-wide leading-[1]">Hope is a tree of life.</h2>
               
               <div className="flex md:flex-row flex-col md:space-x-4 space-y-4 md:space-y-0 pt-5">
-                  {home_page[0].buttonleft?
-                    <div className="bg-FirstColour border-FirstColour border-2 rounded hover:bg-transparent flex items-center justify-center h-12 w-64 transition-all">
-                      <a href={home_page[0].buttonleft.href} className="flex items-center justify-center h-full w-full focus:outline-none font-semibold text-sm text-Text transition-all hover:text-FirstColour font-rubik tracking-wide">{home_page[0].buttonleft.title}</a>
-                    </div>
-                  :<div></div>}
-                  {home_page[0].buttonright?
-                    <div className="bg-SecondryColour border-SecondryColour border-2 rounded hover:bg-transparent flex items-center justify-center h-12 w-64 transition-all">
-                      <a href={home_page[0].buttonright.href} className="flex items-center justify-center h-full w-full focus:outline-none font-semibold text-sm text-Text transition-all hover:text-SecondryColour font-rubik tracking-wide">{home_page[0].buttonright.title}</a>
-                    </div>
-                  :<div></div>}
+                <a href="../aboutme#portfolio/" className="h-12 w-64 bg-SecondryColour active:translate-y-[5px] group rounded-lg flex items-center justify-center border-4 border-SecondryColour text-white transition-all">
+                  <p className="focus:outline-none text-Text font-semibold text-sm font-rubik tracking-wide">My Portfolio</p>
+                  <div className="h-12 w-64 absolute rounded-lg border-b-[5px] mt-[5px] transition-all border-FirstColour"></div>
+                </a>
+                <a href="../blog/" className="h-12 w-64 bg-SecondryColour active:translate-y-[5px] group rounded-lg flex items-center justify-center border-4 border-SecondryColour text-white transition-all">
+                  <p className="focus:outline-none text-Text font-semibold text-sm font-rubik tracking-wide">Blog Posts</p>
+                  <div className="h-12 w-64 absolute rounded-lg border-b-[5px] mt-[5px] transition-all border-FirstColour"></div>
+                </a>
               </div>
 
               
@@ -92,13 +89,14 @@ const home = ({
             </div>
           </Jarallax>
 
-          {home_page[0].buttonleft && home_page[0].portfoliotitle?
+          <div className="h-4 from-[#10101030] to-[#10101010] w-full flex bg-gradient-to-b"></div>
+
           
             <div id="portfolio" className="bg-Background flex justify-center">
 
               <div className="py-20 flex flex-col items-center px-10 md:px-[4rem] lg:px-40 xl:px-60">
 
-              <h2 className="text-Text font-poppins font-[800] text-2xl md:text-4xl lg:text-5xl uppercase tracking-wide leading-[1]">{home_page[0].portfoliotitle}</h2>
+              <h2 className="text-Text font-poppins font-[800] text-2xl md:text-4xl lg:text-5xl uppercase tracking-wide leading-[1]">My Portfolio</h2>
                 <div className="border-[1px] mt-8 mb-[5rem] w-64 border-Text"></div>
 
                 <div className="w-full h-full gap-8 items-start flex flex-wrap transition-all justify-center mt-[2rem]">
@@ -106,7 +104,7 @@ const home = ({
                       portfolio.thumbnail && portfolio.title && portfolio.owninguser.name?
                         <a href={`/artwork/${portfolio.slug.current}`} className="w-[49%] lg:w-[24%] hover:scale-[0.95] h-auto transition-all relative group rounded-xl flex flex-col items-center justify-center overflow-hidden">       
                             <img className="w-full h-full transition-all" src={urlFor(portfolio.thumbnail.image)} />
-                            <div className="absolute bottom-0 left-0 w-full items-center justify-center transition-colors h-[50%] from-transparent via-Background/50 to-Background/70 group-hover:bg-gradient-to-b flex flex-col">
+                            <div className="absolute bottom-0 left-0 w-full items-center justify-center transition-opacity h-[50%] from-transparent via-Background/50 to-Background/70 group-hover:bg-gradient-to-b flex flex-col">
                                 {portfolio.title?<p className="font-rubik group-hover:text-Text font-[600] text-transparent text-lg">{portfolio.title}</p>:null}
                                 {portfolio.owninguser.name?<p className="font-rubik group-hover:text-Text font-[300] text-transparent text-base">By {portfolio.owninguser.name}</p>:null}
                             </div>
@@ -114,43 +112,35 @@ const home = ({
                       :null
                     ))}
                 </div>
-
               </div>
 
             </div>
-
-          :null}
-
-        {Blog && home_page[0].blogtitle?
           
-          <div id="blogs" className="bg-Background flex justify-center">
+          <div id="blogs" className="bg-Background flex justify-center w-full">
 
-            <div className="py-20 flex flex-col items-center px-10 md:px-[4rem] lg:px-40 xl:px-60">
+            <div className="py-20 flex flex-col items-center w-full px-10 md:px-[4rem] lg:px-40 xl:px-60">
 
-            <h2 className="text-Text font-poppins font-[800] text-2xl md:text-4xl lg:text-5xl uppercase tracking-wide leading-[1]">{home_page[0].blogtitle}</h2>
+              <h2 className="text-Text font-poppins font-[800] text-2xl md:text-4xl lg:text-5xl uppercase tracking-wide leading-[1]">My Blog Posts</h2>
               <div className="border-[1px] mt-8 mb-[5rem] w-64 border-Text"></div>
 
               <div className="w-full h-full gap-8 items-start flex flex-wrap transition-all justify-center mt-[2rem]">
-                {Blog?.map((skill) => (
-                    <a href={`/blog/${skill.slug.current}`} className="w-full md:max-w-4xl max-w-md h-44 bg-SecondryBackground rounded-xl flex items-center md:p-8 p-4 hover:scale-[0.98] transition-all">
-                      <img src={urlFor(skill.image)} className="md:w-[100px] md:h-[100px] h-[75px] w-[75px] rounded-full"></img>
-                      <div className="text-Text ml-5">
-                        <h2 className="font-[500] text-xl font-poppins">{skill.title}</h2>
-                        <div className="font-[300] md:text-base text-xs mt-2 text-Text font-rubik flex md:flex-row flex-col md:space-y-0 space-y-2">
-                          <p className="mr-2">Posted: {moment(skill.date).format(("dddd, MMMM Do YYYY, h:mma")) }</p>
-                          {skill.portfolio.title?<p className="md:flex hidden mr-2">/</p>:null}
-                          {skill.portfolio.title?<p className="">Portfolio Refrence: {skill.portfolio.title}</p>:null}
-                        </div>
-                      </div>
-                    </a>
+                {Blog?.map((map) => (
+
+                  <a href={`/blog/${map.slug.current}`} className="w-full max-w-5xl bg-SecondryBackground rounded-xl flex items-center flex-col md:flex-row hover:scale-[0.98] transition-all">
+
+                  <div className="ImageContainer overflow-hidden md:rounded-l-xl md:rounded-t-none rounded-t-xl bg-center bg-cover md:w-[200px] md:h-[200px] w-full h-[500px]" style={{backgroundImage: "url(" + urlFor(map.image) + ")",}}></div>
+                  <div className="text-Text md:ml-8 TextContainer p-4 md:py-0 py-8">
+                    <h2 className="font-[500] text-xl font-poppins">{map.title}</h2>
+                    <div className="font-[300] md:text-base text-xs mt-2 text-Text font-rubik flex md:flex-row flex-col md:space-y-0 space-y-2">
+                      <p className="mr-2">{moment(map.date).format(("dddd, MMMM Do YYYY, h:mma"))}</p>
+                    </div>
+                  </div>
+                  </a>
+
                 ))}
               </div>
-
             </div>
-
           </div>
-
-        :null}
         </div>
 )}
 
@@ -166,16 +156,6 @@ export const getServerSideProps = async (pageContext) => {
     slug
   }`
   const portfolios = await sanityClient.fetch(query)
-
-  const home_query = '*[_type == "home" && home == "Home"]'
-  const home_page = await sanityClient.fetch(home_query)
-
-  const nav_query = `*[_type == "header" && header == "Header"][0]{
-    headerlogoalt,
-    headerlogo,
-    directorys
-  }`
-  const navbar = await sanityClient.fetch(nav_query)
 
   const blog_query = `*[_type == "blog"]{
     title,
@@ -204,8 +184,6 @@ export const getServerSideProps = async (pageContext) => {
     return {
       props: {
         portfolios: [],
-        home_page,
-        Navbar: navbar,
         Blog: blog,
         DateTime: datetime,
         DomainName
@@ -215,8 +193,6 @@ export const getServerSideProps = async (pageContext) => {
     return {
       props: {
         portfolios,
-        home_page,
-        Navbar: navbar,
         Blog: blog,
         DateTime: datetime,
         DomainName
