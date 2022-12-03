@@ -26,8 +26,8 @@ const blogpost = ({
         <title>{DomainName} - {title}</title>
         <link rel="shortcut icon" href={urlFor(Navbar.headerlogo)} />
 
-        <meta content="CrypticzXI - Portfolio" property="og:title" />
-        <meta id="embed-desc" property="og:description" content={post}></meta>
+        <meta content={"CrypticzXI - Blog Post"} property="og:title" />
+        <meta id="embed-desc" property="og:description" content={title + " - " + currentdate}></meta>
         <meta name="theme-color" content="#198794"></meta>
       </Head>
 
