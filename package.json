@@ -9,12 +9,7 @@
     "prod": "postcss tailwind.css -o public/assets/css/app.css && postcss --use cssnano -r public/assets/css/app.css --no-map"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free-brands": "^5.0.13",
-    "@fortawesome/fontawesome-free-regular": "^5.0.13",
-    "@fortawesome/free-solid-svg-icons": "^6.1.1",
-    "@fortawesome/react-fontawesome": "^0.1.18",
     "@portabletext/react": "^1.0.6",
-    "@react-google-maps/api": "^2.1.1",
     "@sanity/block-content-to-react": "^2.0.7",
     "jarallax": "latest",
     "next": "10.1.3",
