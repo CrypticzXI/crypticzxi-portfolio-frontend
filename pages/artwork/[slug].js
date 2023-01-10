@@ -94,7 +94,7 @@ const portfolio = ({
       <div className="py-32 flex flex-col items-center px-10 md:px-[4rem] lg:px-40">
 
         <div className="flex flex-col items-center w-full lg:max-w-[50%] md:max-w-[75%]">
-          {title?<h2 className="text-Text font-poppins font-[800] text-2xl md:text-4xl text-center lg:text-5xl uppercase tracking-wide leading-[1]">Hello Bill!</h2>:null}
+          {title?<h2 className="text-Text font-poppins font-[800] text-2xl md:text-4xl text-center lg:text-5xl uppercase tracking-wide leading-[1]">{title}</h2>:null}
           {desc?<h2 className="text-Text mt-5 font-rubik font-[400] text-xl text-center lg:text-2xl tracking-wide leading-[1]">{desc}</h2>:null}
         </div>
 
