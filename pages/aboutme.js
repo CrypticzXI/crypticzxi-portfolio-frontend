@@ -105,7 +105,7 @@ const profile = ({
           {Account.aboutme.desc || Account.aboutme.hiring || Account.aboutme.skills || Account.aboutme.software?
             <a href="#aboutme">About Me</a>
           :null}
-          {Account.resume?
+          {Account.ResumeFile?
             <a href="#resume">Resume</a>
           :null}
             <a href="#blog">Blog</a>
@@ -251,7 +251,7 @@ const profile = ({
     :null}
 
 
-    {Account.resume?
+    {Account.ResumeFile?
       <div id="resume" className="mt-20 flex flex-col items-center px-20">
         <h2 className="text-Text font-poppins font-[800] text-2xl md:text-4xl lg:text-5xl uppercase tracking-wide leading-[1]">Resume</h2>
         <div className="border-[1px] my-8 w-64 border-Text"></div>
