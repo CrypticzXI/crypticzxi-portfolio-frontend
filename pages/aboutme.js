@@ -105,7 +105,7 @@ const profile = ({
           {Account.aboutme.desc || Account.aboutme.hiring || Account.aboutme.skills || Account.aboutme.software?
             <a href="#aboutme">About Me</a>
           :null}
-          {Account.resume?
+          {Account.ResumeFile?
             <a href="#resume">Resume</a>
           :null}
             <a href="#blog">Blog</a>
@@ -251,7 +251,7 @@ const profile = ({
     :null}
 
 
-    {Account.resume?
+    {Account.ResumeFile?
       <div id="resume" className="mt-20 flex flex-col items-center px-20">
         <h2 className="text-Text font-poppins font-[800] text-2xl md:text-4xl lg:text-5xl uppercase tracking-wide leading-[1]">Resume</h2>
         <div className="border-[1px] my-8 w-64 border-Text"></div>
@@ -261,7 +261,7 @@ const profile = ({
           {Account.resume.image?<img className="md:max-w-[50%] w-full h-auto" src={urlFor(Account.resume.image)}/>:<div></div>}
 
           {ResumeFile? 
-            <a href={`${ResumeFile.url}`} download className="flex mt-10 w-full md:w-[24rem] h-20 bg-SecondryColour border-2 border-SecondryColour group hover:bg-transparent transition-all p-4 rounded-lg items-center">
+            <a href={`${ResumeFile.url}`} download className="flex w-full md:w-[24rem] h-20 bg-SecondryColour border-2 border-SecondryColour group hover:bg-transparent transition-all p-4 rounded-lg items-center">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 transition-all text-Text group-hover:text-SecondryColour" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
