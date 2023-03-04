@@ -19,7 +19,9 @@ const blogpost = ({
     Navbar
 }) => {
   var Filesize = formatSizeUnits(fileinfo?.size)
-  var Image0 = urlFor(images[0])
+  if (images[0]) {
+    var Image0 = urlFor(images[0]) 
+  }
   return (
     <div className="bg-Background min-h-screen overflow-x-hidden">
 
@@ -30,7 +32,7 @@ const blogpost = ({
         <meta content={"CrypticzXI - Blog Post"} property="og:title" />
         <meta id="embed-desc" property="og:description" content={title + " - " + currentdate}></meta>
         <meta name="theme-color" content="#198794"></meta>
-        <meta property="og:image" content={Image0}></meta>
+        {Image0 ? <meta property="og:image" content={Image0}></meta>: null}
         <meta name="twitter:card" content="summary_large_image"></meta>
         <meta id="image-src" name="twitter:image:src" content={Image0}></meta>
         <meta id="discord" name="twitter:image" content={Image0}></meta>
