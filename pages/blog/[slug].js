@@ -103,7 +103,7 @@ const blogpost = ({
             </a>
           :null}
           {post?
-            <div className="text-Text font-rubik transition-all mt-10">
+            <div className="text-Text font-rubik text-center md:text-lg text-base transition-all mt-10">
                 <BlockContent blocks={post}/>
             </div>
           :null}
