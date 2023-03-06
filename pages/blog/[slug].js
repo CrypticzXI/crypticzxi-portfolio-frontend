@@ -34,8 +34,8 @@ const blogpost = ({
         <meta name="theme-color" content="#198794"></meta>
         {Image0 && images[0] ? <meta property="og:image" content={Image0}></meta>: null}
         <meta name="twitter:card" content="summary_large_image"></meta>
-        {Image0 && images[0] ? <meta id="image-src" name="twitter:image:src" content={Image0}></meta>: null}
-        {Image0 && images[0] ? <meta id="discord" name="twitter:image" content={Image0}></meta>: null}
+        {Image0 && <meta id="image-src" name="twitter:image:src" content={Image0}></meta>: null}
+        {Image0 && <meta id="discord" name="twitter:image" content={Image0}></meta>: null}
       </Head>
 
       <div className="fixed top-0 w-full h-16 bg-clip-padding backdrop-blur-xl bg-opacity-50 bg-Background z-[500] flex items-center xl:px-40 lg:px-32 md:px-20 px-8 transition-all">
