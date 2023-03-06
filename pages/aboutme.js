@@ -24,7 +24,7 @@ const profile = ({
     <div className="bg-Background overflow-x-hidden">
 
       <Head>
-        <title>{DomainName} - {Account.name}</title>
+        <title>{DomainName} - CrypticzXI</title>
         <link rel="shortcut icon" href={urlFor(Navbar.headerlogo)} />
       </Head>
 
